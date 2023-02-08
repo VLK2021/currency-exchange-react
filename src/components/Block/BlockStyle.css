@@ -1,0 +1,44 @@
+.block {
+    width: 35%;
+    padding: 3rem 0 3rem 0;
+    background: beige;
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: beige;
+}
+
+li {
+    width: 5rem;
+    list-style: none;
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid grey;
+    background: snow;
+    box-shadow: 0.2rem 0.2rem 0.2rem black;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input {
+    width: 80%;
+    height: 3rem;
+    color: black;
+    background: snow;
+    margin-top: 3rem;
+    font-weight: bold;
+    font-size: 2rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem grey;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+.active{
+    background: darkblue;
+    color: snow;
+}
