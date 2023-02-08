@@ -7,7 +7,7 @@ import url from "../constants/url";
 
 const Layout = () => {
     const [currency1, setCurrency1] = useState('UA');
-    const [currency2, setCurrency2] = useState('USA');
+    const [currency2, setCurrency2] = useState('USD');
     const [price1, setPrice1] = useState(0);
     const [price2, setPrice2] = useState(0);
     const [array, setArray] = useState([]);
@@ -25,12 +25,16 @@ const Layout = () => {
     }, []);
 
     const onChangePrice1 = (value) => {
+        // const newArr = array.filter(obj => currency2 === obj.cc);
+        // console.log(newArr);
         setPrice1(value)
+        // setPrice2(value * newArr[0].rate);
     }
 
     const onChangePrice2 = (value) => {
         setPrice2(value)
     }
+
 
     return (
         <div className={'layout'}>
