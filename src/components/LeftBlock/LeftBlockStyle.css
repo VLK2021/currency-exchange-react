@@ -1,0 +1,7 @@
+.leftBlock{
+    width: 35%;
+    background: beige;
+    padding: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem black;
+    border-radius: 0.5rem;
+}
