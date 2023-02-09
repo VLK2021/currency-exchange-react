@@ -8,8 +8,10 @@ import url from "../constants/url";
 const Layout = () => {
     const [currency1, setCurrency1] = useState('UA');
     const [currency2, setCurrency2] = useState('USD');
+
     const [price1, setPrice1] = useState(0);
     const [price2, setPrice2] = useState(0);
+
     const [array, setArray] = useState([]);
 
     useEffect(() => {
@@ -25,11 +27,17 @@ const Layout = () => {
     }, []);
 
     const onChangePrice1 = (value) => {
-        // const newArr = array.filter(obj => currency2 === obj.cc);
-        // console.log(newArr);
+        const newArr = array.filter(obj => currency2 === obj.cc);
+        console.log(newArr[0]?.rate);
         setPrice1(value)
-        // setPrice2(value * newArr[0].rate);
+        setPrice2(value / newArr[0]?.rate);
     }
+
+
+    useEffect(() => {
+        onChangePrice1(price1);
+    }, [currency2, price2]);
+
 
     const onChangePrice2 = (value) => {
         setPrice2(value)
