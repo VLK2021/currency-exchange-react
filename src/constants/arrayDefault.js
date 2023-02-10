@@ -1,2 +1,3 @@
-const  arrDefault = ['UA', 'USD', 'EUR', 'GBP'];
+const  arrDefault = ['UA', 'USD', 'EUR', 'GBP', 'PLN'];
+
 export default arrDefault;

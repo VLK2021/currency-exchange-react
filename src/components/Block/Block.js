@@ -21,8 +21,8 @@ const Block = ({onChangeCurrency, onChangeValue, value, currency}) => {
             <input
                 type="number"
                 placeholder={0}
-                value={value}
-                onChange={e => onChangeValue(e.target.value)}
+                value={value.toString()}
+                onChange={e => onChangeValue(e.target.value.toString())}
             />
 
         </div>

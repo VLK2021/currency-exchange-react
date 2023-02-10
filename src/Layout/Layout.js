@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {AiOutlineArrowRight} from "react-icons/ai";
 
 import './LayoutStyle.css';
 import Block from "../components/Block/Block";
@@ -19,7 +20,7 @@ const Layout = () => {
             .then(response => response.json())
             .then(req => {
                 setArray(req);
-                console.log(req);
+                // console.log(req);
             })
             .catch(err => {
                 alert('Не вийшло отримати дані від сервера!');
@@ -27,16 +28,29 @@ const Layout = () => {
     }, []);
 
     const onChangePrice1 = (value) => {
-        const newArr = array.filter(obj => currency2 === obj.cc);
-        console.log(newArr[0]?.rate);
-        setPrice1(value)
-        setPrice2(value / newArr[0]?.rate);
+        if (currency1 === currency2) {
+            setPrice2(value);
+        } else if (currency1 === 'UA') {
+            const newArr = array.filter(obj => currency2 === obj.cc);
+            setPrice1(value)
+            setPrice2((value / newArr[0]?.rate).toFixed(3));
+        } else if (currency2 === 'UA') {
+            const newArr = array.filter(obj => currency1 === obj.cc);
+            setPrice1(value)
+            setPrice2((value * newArr[0]?.rate).toFixed(3));
+        } else {
+            const newArr = array.filter(obj => currency2 === obj.cc);
+            const newArr1 = array.filter(obj => currency1 === obj.cc);
+            setPrice1(value)
+            setPrice2(((value / newArr[0]?.rate) * newArr1[0]?.rate).toFixed(3));
+        }
+
     }
 
 
     useEffect(() => {
         onChangePrice1(price1);
-    }, [currency2, price2]);
+    }, [currency2, price2, currency1, price1]);
 
 
     const onChangePrice2 = (value) => {
@@ -49,6 +63,7 @@ const Layout = () => {
             <h1>currency exchange</h1>
 
             <h2>{array[0]?.exchangedate}</h2>
+            <h4>NBU</h4>
 
             <div className={'layout-blocks'}>
                 <Block
@@ -57,6 +72,8 @@ const Layout = () => {
                     onChangeCurrency={setCurrency1}
                     onChangeValue={onChangePrice1}
                 />
+
+                <div className={'arrow'}><AiOutlineArrowRight/></div>
 
                 <Block
                     value={price2}
