@@ -24,7 +24,6 @@ const Block = ({onChangeCurrency, onChangeValue, value, currency}) => {
                 value={value.toString()}
                 onChange={e => onChangeValue(e.target.value.toString())}
             />
-
         </div>
     );
 };
