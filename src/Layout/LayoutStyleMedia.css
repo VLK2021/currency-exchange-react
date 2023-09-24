@@ -21,4 +21,14 @@
         justify-content: center;
         align-items: center;
     }
+
+    .arrow {
+        display: none;
+        color: red;
+    }
+
+    .arrowDown{
+        color: red;
+        display: block;
+    }
 }

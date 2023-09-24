@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {AiOutlineArrowRight} from "react-icons/ai";
+import {AiOutlineArrowDown, AiOutlineArrowRight} from "react-icons/ai";
 
 import './LayoutStyle.css';
 import './LayoutStyleMedia.css';
@@ -74,6 +74,7 @@ const Layout = () => {
                 />
 
                 <div className={'arrow'}><AiOutlineArrowRight/></div>
+                <div className={'arrowDown'}><AiOutlineArrowDown/></div>
 
                 <Block
                     value={price2}

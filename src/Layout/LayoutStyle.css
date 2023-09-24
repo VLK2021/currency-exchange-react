@@ -31,3 +31,8 @@ h4 {
     color: red;
 }
 
+.arrowDown{
+    color: red;
+    display: none;
+}
+
