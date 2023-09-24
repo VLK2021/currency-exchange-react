@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './BlockStyle.css';
+import './BlockStyleMedia.css';
 import arrDefault from "../../constants/arrayDefault";
 
 

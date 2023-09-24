@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {AiOutlineArrowRight} from "react-icons/ai";
 
 import './LayoutStyle.css';
+import './LayoutStyleMedia.css';
 import Block from "../components/Block/Block";
 import url from "../constants/url";
 
@@ -20,7 +21,6 @@ const Layout = () => {
             .then(response => response.json())
             .then(req => {
                 setArray(req);
-                // console.log(req);
             })
             .catch(err => {
                 alert('Не вийшло отримати дані від сервера!');

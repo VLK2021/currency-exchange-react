@@ -1,0 +1,10 @@
+@media screen and (max-width: 700px){
+    input{
+        margin: 0.3rem 0;
+        font-size: 1.6rem;
+    }
+
+    .block{
+        padding: 0.5rem;
+    }
+}

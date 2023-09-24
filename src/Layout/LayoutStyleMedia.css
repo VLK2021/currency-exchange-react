@@ -1,0 +1,24 @@
+@media screen and (max-width: 700px){
+    .layout{
+        width: 100%;
+    }
+
+    h1, h2, h4 {
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        padding: 1rem 0;
+        color: midnightblue;
+    }
+
+    .layout-blocks{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
